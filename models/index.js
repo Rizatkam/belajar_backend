@@ -1,2 +1,2 @@
 const books=require('./books')
-module.exports=books
+module.exports={books}

@@ -14,4 +14,9 @@ app.use(bodyParser.json());
 app.use(cors());
 app.get('/',function (req,res){
     res.status(200).send({env:process.env})});
-app.listen(port),()=>console.log(`listen ini port ${port}`) 
+app.get('/books',books.getAll)
+app.post('/books',books.createBook)
+app.get('/books/:id',books.get_detail_by_id)
+app.put('/books/:id',books.update_by_id)
+app.delete('/books/:id',books.delete_by_id)
+app.listen(port),()=>console.log(`listen ini port ${port}`);
